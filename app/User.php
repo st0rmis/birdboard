@@ -38,13 +38,13 @@ class User extends Authenticatable
     ];
 
     /**
-     * undocumented function
+     * Get all projects owned by the user.
      *
-     * @return void
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function projects()
     {
-        return $this->hasMany(Project::class, 'owner_id');
+        return $this->hasMany(Project::class, 'owner_id')->latest('updated_at');
     }
-    
+
 }
