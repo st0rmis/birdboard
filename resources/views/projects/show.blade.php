@@ -46,7 +46,7 @@
                         @method('PATCH')
                         @csrf
                       
-                        <textarea class="card w-full mb-4" style="min-height: 200;" placeholder="Anything to note?">{{ $project->notes }}</textarea>
+                        <textarea name="notes" class="card w-full mb-4" style="min-height: 200;" placeholder="Anything to note?">{{ $project->notes }}</textarea>
                         <button type="submit" class="button">Update notes</button>
                     </form>
                 </div>
