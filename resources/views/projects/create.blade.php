@@ -2,14 +2,25 @@
 
 @section('content')
 
-        <h1>Create a project</h1>
+    <div class="lg:w-1/2 lg:mx-auto p-6 md:py-12 md:px-16 rounded shadow">
 
-        <form action="/projects" method="POST" accept-charset="utf-8">
-            @csrf
-           <input type="text" value="" name="title" id="title"/> 
-           <textarea name="description" id=""></textarea>
-           <button type="submit" value="">Create</button>
-           <a href="/projects">Cancel</a>
+        <h1 class="text-2xl font-normal mb-10 text-center">
+            Create a project
+        </h1>
+
+        <form
+            action="/projects" 
+            method="POST"
+        >
+
+        @include ('projects.form', [
+            'project' => new App\Project,
+            'buttonText' => 'Create Project',
+            'cancelLink' => '/projects'
+        ])
+
         </form>
+
+    </div>
 
 @endsection
